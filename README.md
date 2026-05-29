@@ -139,9 +139,15 @@ Plain language answer
 
 ---
 
-## Important Note
+## Disclaimer
 
-This tool is for **informational purposes only**. Always consult a qualified doctor for medical advice and diagnosis.
+MediScan AI is built as a **personal project for educational purposes only**.
+
+This tool is designed to help people better understand their medical reports 
+in simple language — it is not a replacement for professional medical advice. 
+The information provided may not always be fully accurate, as AI can make mistakes.
+
+Please always consult a qualified doctor before making any health-related decisions.
 
 ---
 
