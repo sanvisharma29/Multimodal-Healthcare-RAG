@@ -15,3 +15,5 @@ streamlit
 pillow
 pytesseract
 pdf2image
+cohere 
+groq
