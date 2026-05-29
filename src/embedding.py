@@ -6,7 +6,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-co = cohere.Client(os.getenv("COHERE_API_KEY"))
+import streamlit as st
+api_key = st.secrets.get("COHERE_API_KEY") or os.getenv("COHERE_API_KEY")
+co = cohere.Client(api_key)
 
 def embed_chunks(chunks):
     """
