@@ -100,8 +100,11 @@ def load_image(file_path):
 
 
 def describe_image(file_path):
-    import streamlit as st
-    api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+    try:
+        import streamlit as st
+        api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+    except:
+        api_key = os.getenv("GROQ_API_KEY")
     client = Groq(api_key=api_key)
     image_data = load_image(file_path)
 

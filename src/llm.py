@@ -7,12 +7,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import streamlit as st
-api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
-client = Groq(api_key=api_key)
+def get_groq_client():
+    try:
+        import streamlit as st
+        api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+    except:
+        api_key = os.getenv("GROQ_API_KEY")
+    return Groq(api_key=api_key)
 
 
 def generate_answer(question, retrieved_chunks):
+    client = get_groq_client()
     context = "\n\n".join(retrieved_chunks)
 
     prompt = (

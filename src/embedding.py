@@ -6,9 +6,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-import streamlit as st
-api_key = st.secrets.get("COHERE_API_KEY") or os.getenv("COHERE_API_KEY")
-co = cohere.Client(api_key)
+def get_cohere_client():
+    try:
+        import streamlit as st
+        api_key = st.secrets.get("COHERE_API_KEY") or os.getenv("COHERE_API_KEY")
+    except:
+        api_key = os.getenv("COHERE_API_KEY")
+    return cohere.Client(api_key)
 
 def embed_chunks(chunks):
     """
@@ -16,6 +20,7 @@ def embed_chunks(chunks):
     and adds an embedding (vector) to each one.
     """
     # Extract just the text from each chunk
+    co = get_cohere_client()
     texts = [chunk["text"] for chunk in chunks]
 
     # Send to Cohere and get vectors back
