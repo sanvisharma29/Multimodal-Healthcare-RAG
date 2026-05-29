@@ -1,0 +1,17 @@
+langchain
+langchain-core
+langchain-community
+pypdf
+pymupdf
+pdfplumber
+pymupdf
+openai
+chromadb
+langchain
+langchain-openai
+langchain-text-splitters
+python-dotenv
+streamlit
+pillow
+pytesseract
+pdf2image
