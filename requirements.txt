@@ -16,4 +16,4 @@ pillow
 pytesseract
 pdf2image
 cohere 
-groq
+groq==0.9.0
